@@ -1,0 +1,39 @@
+/* --- Sarcina 1: Interactivitate --- */
+
+/* Hover Carduri */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    /* Tranzitie avansata conform cerintei */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-12px); /* Ridicare card */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Umbra mai intensa */
+}
+
+/* Link-uri navigatie cu underline animat */
+.nav-links li {
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-links li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.nav-links li:hover::after {
+    width: 100%; /* Linia se extinde la hover */
+}

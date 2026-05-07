@@ -1,0 +1,3 @@
+Audit W3C - Ziua 4
+Erori identificate: 0.
+Rezolvare: Codul a fost verificat prin Direct Input. S-au corectat micile avertismente legate de lipsa atributului 'lang' pe tag-ul html (adaugat lang="ro") si structura head-ului. Documentul este acum valid conform standardelor W3C Markup Validator.

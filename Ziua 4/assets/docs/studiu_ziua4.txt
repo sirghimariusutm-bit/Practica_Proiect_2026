@@ -1,0 +1,14 @@
+      Definiții Tehnice CSS
+
+1. flex-grow vs flex-shrink: 
+- flex-grow: Determină cât de mult se extinde un element pentru a ocupa spațiul liber din container. Un element cu valoarea 2 va crește de două ori mai repede decât unul cu valoarea 1.
+- flex-shrink: Determină cât de mult se poate micșora un element când spațiul este insuficient. Este mecanismul de protecție împotriva overflow-ului.
+
+2. align-content vs align-items:
+- align-items: Aliniază elementele pe axa secundară în cadrul unui singur rând.
+- align-content: Gestionează spațiul dintre rândurile de elemente (funcționează doar când avem flex-wrap: wrap și mai multe rânduri).
+
+3. grid-template-areas:
+- Este o metodă vizuală de a defini structura paginii prin atribuirea unor nume specifice zonelor (ex: "header header", "sidebar content"). Permite rearanjarea layout-ului fără a schimba ordinea elementelor în HTML.
+
+Note: Screenshot-ul cred ca o sa fie pus in acelasi folder ca acesta, la revedere :wave:

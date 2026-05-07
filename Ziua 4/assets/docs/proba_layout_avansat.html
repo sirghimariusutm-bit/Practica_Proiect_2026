@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Laborator Ziua 4 - Perechea II</title>
+    <style>
+        body { margin: 0; font-family: sans-serif; background: #f0f2f5; }
+
+        /* Sarcina 1: Navigatie sticky */
+        .navbar {
+            position: sticky; 
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            /* Efect glassmorphism */
+            background-color: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+
+        /* Sarcina 2: Grid adaptiv fara media queries */
+        .container-grid {
+            display: grid;
+            /* auto-fit si minmax pentru responsivitate automata */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 50px 5%;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            /* tranzitie pregatita pentru sarcina urmatoare */
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .card h3 { margin-top: 0; color: #222; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><strong>TechSolutions</strong></div>
+        <ul class="nav-links">
+            <li>Acasa</li>
+            <li>Servicii</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <div style="padding: 40px 5%;">
+        <h2>Serviciile Noastre</h2>
+        <p>Grid-ul de mai jos se adaptează singur pe orice ecran.</p>
+    </div>
+
+    <section class="container-grid">
+        <article class="card"><h3>Cloud Computing</h3><p>Solutii scalabile pentru afaceri moderne.</p></article>
+        <article class="card"><h3>Cibersecuritate</h3><p>Protectie avansata pentru date sensibile.</p></article>
+        <article class="card"><h3>Software Dev</h3><p>Aplicatii personalizate pe diverse platforme.</p></article>
+        <article class="card"><h3>Consultanta IT</h3><p>Expertiza pentru optimizarea sistemelor.</p></article>
+        <article class="card"><h3>Data Center</h3><p>Gazduire sigura si redundanta pentru servere.</p></article>
+        <article class="card"><h3>AI & ML</h3><p>Algoritmi inteligenti pentru procesarea datelor.</p></article>
+    </section>
+
+    <div style="height: 800px;"></div>
+
+</body>
+</html>
