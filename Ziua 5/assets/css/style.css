@@ -1,0 +1,31 @@
+/* Stil pentru grupul de input */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+/* Stil pentru input-uri */
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    background: #1a1a1a;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Stil pentru buton (Cerința 3) */
+button[type="submit"] {
+    background-color: #ff0000; /* Roșu Vanguard */
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #cc0000;
+    transform: scale(1.05); /* Efect de mărire la hover */
+}
