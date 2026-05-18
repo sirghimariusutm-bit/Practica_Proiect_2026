@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanguard Security</title>
+    <style>
+        /* CSS - Stiluri Generale */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigare */
+        nav {
+            background-color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            color: white;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Hero Section (Imaginea curbata) */
+        .hero {
+            position: relative;
+            margin: 20px auto;
+            width: 90%;
+            height: 450px;
+            background: url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+            border-radius: 200px 50px 200px 50px; /* Formă asimetrică similară cu poza */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.4);
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            max-width: 400px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            max-width: 500px;
+            font-size: 1.1rem;
+        }
+
+        .btn-more {
+            background: white;
+            color: black;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+            width: fit-content;
+            transition: transform 0.3s;
+        }
+
+        .btn-more:hover {
+            transform: scale(1.05);
+        }
+
+        /* Servicii */
+        .services-section {
+            padding: 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: #e0e0e0;
+            padding: 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .service-card:hover {
+            background: #d0d0d0;
+        }
+
+        .icon { font-size: 2rem; margin-bottom: 10px; }
+
+        /* Footer / Contact */
+        .contact-info {
+            background: #f4f4f9;
+            padding: 30px 50px;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigare -->
+    <nav>
+        <div class="logo">
+            <!-- Poți înlocui cu logo-ul tău real -->
+            <strong style="color: #004a99;">VANGUARD</strong> SECURITY
+        </div>
+        <ul>
+            <li><a href="#">Acasă</a></li>
+            <li><a href="#">Servicii</a></li>
+            <li><a href="#">Despre</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sectiunea Hero -->
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>Protecția Inteligentă a Casei Tale</h1>
+            <p>Sisteme Avansate de Supraveghere și Alarme Antiefracție, conectate 24/7 pe telefonul tău.</p>
+            <a href="#" class="btn-more" id="cta-btn">Află Mai Multe</a>
+        </div>
+    </header>
+
+    <!-- Sectiunea Servicii -->
+    <section class="services-section">
+        <h2>Servicii</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">📷</div>
+                <h3>Supraveghere Video</h3>
+                <p>Camere smart 4K, monitorizare live, acces de la distanță.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">📱</div>
+                <h3>Alarme Antiefracție</h3>
+                <p>Senzori de mișcare de ultimă generație, conectare la dispecerat.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🛠️</div>
+                <h3>Mentenanță & Suport</h3>
+                <p>Echipă tehnică dedicată, verificări periodice, suport rapid.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Contact -->
+    <footer class="contact-info">
+        <p><strong>Adresă:</strong> Address Roo Repa 236, Vangard, RA 12108</p>
+        <p><strong>Telefon:</strong> +40 722 123 456</p>
+        <p><strong>Email:</strong> contact@vanguardsecurity.ro</p>
+    </footer>
+
+    <script>
+        // JavaScript pentru o mica interactiune
+        document.getElementById('cta-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Vă mulțumim pentru interes! Un consultant vă va contacta în curând.');
+        });
+
+        // Efect de aparitie treptata (Fade in) la scroll
+        window.addEventListener('scroll', function() {
+            let cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                let position = card.getBoundingClientRect().top;
+                if(position < window.innerHeight - 100) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
