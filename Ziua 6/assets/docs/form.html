@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular Contact - Vanguard Security</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ajustări specifice pentru ca acest fișier să arate bine individual */
+        body {
+            background-color: #0d0d0d; /* Fundal negru ca în poză */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 800px;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Contact Vanguard Security</h2>
+    
+    <form action="#" method="POST">
+        <div class="input-group">
+            <input type="text" id="nume" name="nume" placeholder=" " required pattern="[A-Za-z\s]{3,}">
+            <label for="nume">Nume Complet</label>
+            <span class="error-msg">Introduceți un nume valid (minim 3 litere).</span>
+        </div>
+
+        <div class="input-group">
+            <input type="email" id="email" name="email" placeholder=" " required>
+            <label for="email">Adresa de Email</label>
+            <span class="error-msg">Introduceți o adresă de email validă.</span>
+        </div>
+
+        <div class="input-group">
+            <textarea id="mesaj" name="mesaj" rows="5" placeholder=" " required></textarea>
+            <label for="mesaj">Mesajul tău (Maxim 500 caractere)</label>
+        </div>
+
+        <button type="submit" class="btn-submit">Trimite Mesajul</button>
+    </form>
+
+    <div class="contact-info-footer">
+        <p>📍 <strong>Adresa:</strong> Str. Voluntarilor 1, Chișinău</p>
+        <p>📞 <strong>Telefon:</strong> 022 123 456</p>
+        <p>📧 <strong>Email:</strong> contact@vanguardsecurity.ro</p>
+    </div>
+
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.527357422116!2d28.8833!3d47.0245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDAxJzI4LjIiTiAyOMKwNTMnMDAuMCJF!5e0!3m2!1sro!2smd!4v1630000000000!5m2!1sro!2smd" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
+
+</body>
+</html>

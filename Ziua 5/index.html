@@ -1,178 +1,54 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Vanguard Security</title>
-    <style>
-        /* CSS INTEGRAT PENTRU ZIUA 5 */
-        body {
-            background-color: #0d0d0d;
-            color: #ffffff;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
-            margin: 0;
-        }
+<section id="contact" style="padding: 50px 0;">
+    <div class="contact-container">
+        
+        <!-- Formularul (2/3 din lățime) -->
+        <form action="#" class="contact-form">
+            <h2>Contact Vanguard Security</h2>
 
-        .container {
-            width: 100%;
-            max-width: 800px;
-            background: #161616;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-            border: 1px solid #222;
-        }
+            <!-- Grupare Logică cu fieldset și legend -->
+            <fieldset>
+                <legend>Date Personale</legend>
+                <div class="input-box">
+                    <label>Nume Complet</label>
+                    <input type="text" name="nume" placeholder="Ex: Ion Popescu" autocomplete="name" required>
+                </div>
+                <div class="input-box">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="nume@exemplu.com" autocomplete="email" required>
+                </div>
+            </fieldset>
 
-        h2 {
-            color: #ff0000;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            border-left: 5px solid #ff0000;
-            padding-left: 15px;
-        }
+            <fieldset>
+                <legend>Detalii Mesaj</legend>
+                <div class="input-box">
+                    <label>Subiectul solicitării</label>
+                    <select name="subiect" class="select-stilizat">
+                        <option value="" disabled selected>Alege o opțiune...</option>
+                        <option value="paza">Pază și Protecție</option>
+                        <option value="sisteme">Sisteme Alarmă</option>
+                        <option value="consultanta">Consultanță</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label>Mesajul tău (Maxim 500 caractere)</label>
+                    <!-- maxlength asigură limita de caractere fără JS -->
+                    <textarea name="mesaj" maxlength="500" placeholder="Scrie aici..."></textarea>
+                    <small>Limita: 500 caractere</small>
+                </div>
+            </fieldset>
 
-        /* Group for Floating Labels */
-        .input-group {
-            position: relative;
-            margin-bottom: 30px;
-        }
+            <button type="submit" class="btn-trimite">Trimite Mesaj</button>
+        </form>
 
-        input, textarea, select {
-            width: 100%;
-            padding: 15px;
-            background: #222;
-            border: 1px solid #333;
-            color: white;
-            border-radius: 6px;
-            outline: none;
-            transition: 0.3s;
-            font-size: 16px;
-        }
-
-        input:focus, textarea:focus {
-            border-color: #ff0000;
-            background: #2a2a2a;
-        }
-
-        /* Label-ul care pluteste */
-        .input-group label {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            color: #888;
-            transition: 0.3s all;
-            pointer-events: none;
-        }
-
-        /* Logica de miscare a label-ului */
-        input:focus ~ label, 
-        input:not(:placeholder-shown) ~ label,
-        textarea:focus ~ label,
-        textarea:not(:placeholder-shown) ~ label {
-            top: -25px;
-            left: 5px;
-            font-size: 13px;
-            color: #ff0000;
-            font-weight: bold;
-        }
-
-        /* Tooltip de Eroare (CSS-only) */
-        .error-msg {
-            display: none;
-            color: #ff4444;
-            font-size: 12px;
-            margin-top: 5px;
-            font-weight: bold;
-        }
-
-        input:invalid:focus + label + .error-msg {
-            display: block;
-        }
-
-        /* Buton Submit cu efecte */
-        .btn-submit {
-            background: #ff0000;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            width: 100%;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: 0.4s;
-        }
-
-        .btn-submit:hover {
-            background: #b30000;
-            letter-spacing: 3px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
-        }
-
-        .btn-submit:active {
-            transform: scale(0.98);
-        }
-
-        /* Stil Harta */
-        .map-container {
-            margin-top: 40px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid #333;
-        }
-
-        iframe {
-            width: 100%;
-            height: 300px;
-            filter: grayscale(1) invert(0.92); /* Face harta sa arate Dark Mode */
-        }
-
-        .contact-info {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #aaa;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h2>Contact Vanguard Security</h2>
-    
-    <form action="#">
-        <div class="input-group">
-            <input type="text" id="nume" placeholder=" " required pattern="[A-Za-z\s]{3,}">
-            <label for="nume">Nume Complet</label>
-            <span class="error-msg">Introduceți un nume valid (minim 3 litere).</span>
+        <!-- Harta/Detalii (1/3 din lățime) -->
+        <div class="contact-info">
+            <h3>Unde ne găsiți</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2717.382173167104!2d28.85871217684841!3d47.05228512543037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97d3916295555%3A0xc345706598c47432!2sColegiul%20Universit%C4%83%C5%A3ii%20Tehnice%20a%20Moldovei!5e0!3m2!1sro!2smd!4v1714980000000!5m2!1sro!2smd" width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="contact-text">
+                <p><strong>📍 Adresă:</strong> Str. Voluntarilor 1, Chișinău</p>
+                <p><strong>📞 Telefon:</strong> 022 123 456</p>
+            </div>
         </div>
 
-        <div class="input-group">
-            <input type="email" id="email" placeholder=" " required>
-            <label for="email">Adresa de Email</label>
-            <span class="error-msg">Introduceți o adresă de email validă.</span>
-        </div>
-
-        <div class="input-group">
-            <textarea id="mesaj" rows="4" placeholder=" " required></textarea>
-            <label for="mesaj">Mesajul tău (Maxim 500 caractere)</label>
-        </div>
-
-        <button type="submit" class="btn-submit">Trimite Mesajul</button>
-    </form>
-
-    <div class="contact-info">
-        <p>📍 Adresa: Str. Voluntarilor 1, Chișinău</p>
-        <p>📞 Telefon: 022 123 456</p>
     </div>
-
-    <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.23456789!2d28.8!3d47.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDAwJzAwLjAiTiAyOMKwNDgnMDAuMCJF!5e0!3m2!1sro!2smd!4v1715100000000" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-</div>
-
-</body>
-</html>
+</section>

@@ -1,0 +1,51 @@
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f9f9f9; }
+
+/* NAVIGATIE (Perechea II) */
+.nav-smart {
+    position: sticky; top: 0; z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 5%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+}
+
+.nav-links { display: flex; gap: 20px; list-style: none; }
+
+/* Underline animat (Perechea III) */
+.nav-links li { position: relative; cursor: pointer; }
+.nav-links li::after {
+    content: ''; position: absolute; width: 0; height: 2px;
+    bottom: -5px; left: 0; background: #007bff; transition: 0.3s;
+}
+.nav-links li:hover::after { width: 100%; }
+
+/* MISIUNE - INVERSARE FLUX (Perechea II - Sarcina 3) */
+.misiune-content { display: flex; padding: 50px 5%; align-items: center; gap: 30px; }
+.misiune-text, .misiune-img { flex: 1; }
+.img-placeholder { background: #ddd; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+
+@media (max-width: 600px) {
+    .misiune-content { flex-direction: column-reverse; } /* Imagine deasupra pe mobil */
+}
+
+/* GRID SERVICII (Perechea II & III) */
+.grid-servicii {
+    display: grid;
+    /* 1fr inseamna o fractiune egala din spatiul liber */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; padding: 50px 5%;
+}
+
+.service-card {
+    background: white; padding: 25px; border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    /* Animatii (Perechea III) */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}

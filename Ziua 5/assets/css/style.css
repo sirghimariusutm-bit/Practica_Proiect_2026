@@ -1,31 +1,72 @@
-/* Stil pentru grupul de input */
-.input-group {
-    position: relative;
-    margin-bottom: 25px;
+/* Layout-ul principal cu CSS Grid */
+.contact-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Formularul ia 2 părți, harta ia 1 parte */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Stil pentru input-uri */
-input, textarea, select {
+/* Stilizare fieldset și legend */
+fieldset {
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: #1a1a1a;
+    padding: 0 10px;
+    font-size: 1.1rem;
+}
+
+/* Stil pentru Inputs și Select */
+.input-box {
+    margin-bottom: 15px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input, .select-stilizat, textarea {
     width: 100%;
     padding: 12px;
-    background: #1a1a1a;
-    border: 1px solid #444;
-    color: white;
-    border-radius: 5px;
-    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Foarte important pentru lățime corectă */
+    font-size: 1rem;
 }
 
-/* Stil pentru buton (Cerința 3) */
-button[type="submit"] {
-    background-color: #ff0000; /* Roșu Vanguard */
+textarea {
+    height: 120px;
+    resize: vertical; /* Permite utilizatorului să tragă de el doar pe verticală */
+}
+
+/* Stilizare buton */
+.btn-trimite {
+    background-color: #d32f2f; /* Roșu pentru securitate/alertă */
     color: white;
-    padding: 12px 30px;
+    padding: 15px 30px;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
-    transition: transform 0.2s, background 0.3s;
+    font-weight: bold;
+    width: 100%;
 }
 
-button[type="submit"]:hover {
-    background-color: #cc0000;
-    transform: scale(1.05); /* Efect de mărire la hover */
+.btn-trimite:hover {
+    background-color: #b71c1c;
+}
+
+/* Transformare în coloană unică pentru ecrane mici (Telefoane) */
+@media (max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
 }

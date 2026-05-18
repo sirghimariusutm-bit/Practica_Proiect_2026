@@ -1,0 +1,66 @@
+/* RESETARE */
+* { box-sizing: border-box; }
+
+/* SECURITY LAYER - LASERUL CARE COBOARĂ */
+.security-scanner {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.scanner-line {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #00f2ff, transparent);
+    position: absolute;
+    top: 0;
+    box-shadow: 0 0 15px #00f2ff;
+    animation: scan 4s linear infinite;
+}
+
+.security-status {
+    position: fixed;
+    bottom: 20px; left: 20px;
+    background: rgba(0,0,0,0.8);
+    color: #00f2ff;
+    padding: 10px;
+    border: 1px solid #00f2ff;
+    font-size: 10px;
+    display: flex; align-items: center; gap: 8px;
+    z-index: 1001;
+}
+
+.status-dot {
+    width: 6px; height: 6px;
+    background: #00f2ff;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+/* LOGICA BEM PENTRU PAGINA DE FORMULAR */
+.auth-form__button {
+    padding: 15px;
+    border-radius: 5px;
+    background: #444;
+    color: #888;
+    border: none;
+    cursor: not-allowed;
+    transition: 0.3s;
+}
+
+/* ACTIVARE BUTON CAND EMAIL-UL E VALID */
+.auth-form:has(.auth-form__input:valid) .auth-form__button {
+    background: #00f2ff;
+    color: black;
+    cursor: pointer;
+    pointer-events: all;
+    box-shadow: 0 0 15px #00f2ff;
+    animation: pulse 2s infinite;
+}
+
+/* ANIMAȚII */
+@keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }

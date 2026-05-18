@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanguard Security | Protecție Completă</title>
+    <style>
+        /* --- VARIABILE ȘI RESETARE --- */
+        :root {
+            --vanguard-dark: #333333;
+            --vanguard-red: #ff0000;
+            --vanguard-blue: #00aaff;
+            --vanguard-light: #f4f4f4;
+            --input-bg: #1a1a1a;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: white;
+            color: #333;
+        }
+
+        /* --- NAVBAR --- */
+        header {
+            background-color: var(--vanguard-dark);
+            color: white;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo { font-weight: bold; letter-spacing: 1px; font-size: 20px; }
+        .logo span { color: var(--vanguard-blue); }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--vanguard-red); }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            background-color: var(--vanguard-dark);
+            padding: 60px 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            max-width: 1200px;
+            height: 450px;
+            border-radius: 0 150px 0 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 60px;
+            color: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .hero-banner h1 { font-size: 42px; margin-bottom: 10px; }
+        .hero-banner p { font-size: 18px; opacity: 0.9; }
+
+        /* --- SERVICII CARDS --- */
+        .services-container { padding: 60px 50px; text-align: center; }
+        .services-grid { 
+            display: flex; 
+            justify-content: center; 
+            gap: 25px; 
+            flex-wrap: wrap; 
+            margin-top: 30px;
+        }
+        .service-card { 
+            background: var(--vanguard-light); 
+            padding: 40px 20px; 
+            border-radius: 12px; 
+            width: 280px; 
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+        .service-card:hover { 
+            transform: translateY(-10px); 
+            border-bottom: 4px solid var(--vanguard-red);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .service-card i { font-size: 40px; color: var(--vanguard-blue); }
+
+        /* --- TABEL PREȚURI --- */
+        .pricing-section { padding: 60px 50px; background: white; }
+        .pricing-section h2 { text-align: center; margin-bottom: 40px; }
+        .table-container { overflow-x: auto; border-radius: 10px; box-shadow: 0 0 25px rgba(0,0,0,0.1); }
+        .custom-table { width: 100%; border-collapse: collapse; min-width: 800px; }
+        .custom-table th { background: var(--vanguard-dark); color: white; padding: 18px; text-align: left; }
+        .custom-table td { padding: 15px; border: 1px solid #eee; }
+        .custom-table tr:nth-child(even) { background-color: #fcfcfc; }
+        .custom-table tr:hover { background-color: #fff1f1; color: var(--vanguard-red); font-weight: 500; }
+
+        /* --- MULTIMEDIA (VIDEO) --- */
+        .multimedia-section { padding: 80px 50px; background-color: #f8f9fa; text-align: center; }
+        .video-box { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            border: 12px solid var(--vanguard-dark); 
+            border-radius: 25px; 
+            overflow: hidden; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            background: #000;
+        }
+
+        /* --- CONTACT & MAP --- */
+        #contact {
+            background-color: var(--vanguard-dark);
+            padding: 80px 50px;
+            color: white;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+        .contact-header { grid-column: 1 / -1; }
+        .contact-header h2 { 
+            color: var(--vanguard-red); 
+            border-left: 6px solid var(--vanguard-red); 
+            padding-left: 20px; 
+            text-transform: uppercase;
+        }
+
+        input, textarea {
+            width: 100%; padding: 15px; background: var(--input-bg);
+            border: 1px solid #444; color: white; border-radius: 8px; margin-bottom: 20px; box-sizing: border-box;
+        }
+        button[type="submit"] {
+            background-color: var(--vanguard-red); color: white;
+            padding: 18px; border: none; width: 100%; font-weight: bold; cursor: pointer; border-radius: 8px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        button:hover { background-color: #cc0000; }
+
+        .map-box { border-radius: 15px; overflow: hidden; height: 350px; border: 3px solid #444; }
+        
+        /* Iframe responsiv conform sarcinii */
+        iframe { width: 100%; max-width: 100%; border: none; display: block; }
+
+        footer { text-align: center; padding: 30px; background: #1a1a1a; color: #777; font-size: 14px; border-top: 1px solid #333; }
+        footer strong { color: var(--vanguard-red); }
+
+        @media (max-width: 1000px) { #contact { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><span>VANGUARD</span> SECURITY</div>
+        <nav>
+            <a href="#">Acasă</a>
+            <a href="#servicii">Servicii</a>
+            <a href="#pricing">Prețuri</a>
+            <a href="#prezentare">Tutorial</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-banner">
+            <h1>Protecția Inteligentă a Casei Tale</h1>
+            <p>Sisteme Avansate de Supraveghere conectate 24/7.</p>
+        </div>
+    </section>
+
+    <section class="services-container" id="servicii">
+        <h2>Servicii Profesionale</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>📷 Supraveghere Video</h3>
+                <p>Monitorizare 4K cu acces instant de pe telefonul tău.</p>
+            </div>
+            <div class="service-card">
+                <h3>🚨 Alarme Smart</h3>
+                <p>Senzori de mișcare și efracție cu intervenție rapidă.</p>
+            </div>
+            <div class="service-card">
+                <h3>🛡️ Mentenanță</h3>
+                <p>Suport tehnic specializat și verificări periodice incluse.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+        <h2>Orar Consultații și Listă Prețuri</h2>
+        <div class="table-container">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Serviciu</th>
+                        <th>Specialist</th>
+                        <th>Luni - Vineri</th>
+                        <th>Sâmbătă</th>
+                        <th>Tarif / oră</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Evaluare Risc Securitate</td>
+                        <td>Ing. Andrei V.</td>
+                        <td>09:00 - 18:00</td>
+                        <td>Închis</td>
+                        <td>150 RON</td>
+                    </tr>
+                    <tr>
+                        <td>Instalare Sisteme Alarmă</td>
+                        <td>Echipa Tehnică</td>
+                        <td colspan="2">Doar pe bază de programare</td>
+                        <td>200 RON</td>
+                    </tr>
+                    <tr>
+                        <td>Mentenanță Camere Video</td>
+                        <td>Tehnician Suport</td>
+                        <td>08:00 - 20:00</td>
+                        <td>10:00 - 14:00</td>
+                        <td>100 RON</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="multimedia-section" id="prezentare">
+        <h2>Prezentare Tehnologie Video</h2>
+        <div class="video-box">
+            <iframe width="100%" height="500" 
+                src="https://www.youtube.com/embed/URlpn5PA6Vk" 
+                title="Security Presentation" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-header"><h2>Contact & Locație Vanguard</h2></div>
+        <form>
+            <input type="text" placeholder="Nume Complet" required>
+            <input type="email" placeholder="Adresa de Email" required>
+            <textarea placeholder="Cum vă putem ajuta?" rows="5" required></textarea>
+            <button type="submit">Trimite Mesajul</button>
+        </form>
+        <div class="sidebar-info">
+            <div class="map-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.3444458319694!2d28.88582047683144!3d47.01389472804561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c979469733431f%3A0x6e8e88698c0b3967!2sStrada%20Voluntarilor%201%2C%20Chi%C8%99in%C4%83u!5e0!3m2!1sro!2smd!4v1700000000000" loading="lazy"></iframe>
+            </div>
+            <p style="margin-top:20px;">📍 Str. Voluntarilor 1, Chișinău</p>
+            <p>📞 +373 22 000 000</p>
+        </div>
+    </section>
+
+    <footer>
+        Proiect Multimedia realizat de: <strong>Sirghi Marius</strong> - Vanguard Security 2026
+    </footer>
+
+</body>
+</html>
